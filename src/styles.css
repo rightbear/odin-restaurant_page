@@ -1,3 +1,36 @@
 /*
 background : <img src="images/tea-shop.jpg" alt="Tea Shop" width="400">
 */
+
+.title {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    align-items: center;
+}
+
+#tea, #tapioca, #sugar, #fruit {
+    margin: 0;
+	padding: 20px 0 20px 50px;
+	list-style: none;
+    background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 30px;
+}
+
+#tea {
+	background-image: url("./images/tea-leaves.png");
+}
+
+#tapioca {
+	background-image: url("./images/tapioca-pearls.png");
+}
+
+#sugar {
+	background-image: url("./images/sugar-cane.png");
+}
+
+#fruit {
+	background-image: url("./images/fruit.png");
+}
