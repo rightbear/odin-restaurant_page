@@ -24,7 +24,7 @@ export const loadMenu = function(){
     beverages.setAttribute("id", "beverages");
     //<h2>Beverages</h2>
     const beveragesH2 = document.createElement("h2");
-    beveragesH2.textContent = "Beverages";
+    beveragesH2.textContent = "Our Beverages";
     //<p>Crafted with...
     const beveragesPara = document.createElement("p");
     const beveragesParaNode = document.createTextNode("Crafted with premium ingredients. Inspired by Taiwan’s rich tea culture.");
