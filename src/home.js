@@ -1,12 +1,7 @@
 import starImage from "./images/star.png";
 import teaImage from "./images/tea-list.jpg"
 
-export const loadHome = function(){
-    
-    //Remove all children in div #element:
-    const content = document.querySelector("#content");
-    clearParent(content);
-    
+export const loadHome = function(content){
     // The name of the drink shop
     //<h1 id="shopName">
     const shopName = document.createElement("h1");
@@ -132,10 +127,4 @@ export const loadHome = function(){
     teaListImg.width = 400;
     bottomImage.appendChild(teaListImg);
     content.appendChild(bottomImage);
-}
-
-const clearParent = function(parent){
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
 }

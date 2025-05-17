@@ -2,17 +2,13 @@ import pinImage from "./images/pin.png";
 import cocktailImage from "./images/cocktail.png";
 import heartImage from "./images/heart.png";
 
-export const loadAbout = function(){
-
-    //Remove all children in div #element:
-    const content = document.querySelector("#content");
-    clearParent(content);
-
+export const loadAbout = function(content){
     //<h1>About Us</h1>
     const aboutName = document.createElement("h1");
     aboutName.textContent = "About Us";
     content.appendChild(aboutName);
 
+    //The location of the drink shop
     //<div id="location">
     const location = document.createElement("div");
     location.setAttribute("id", "location");
@@ -66,6 +62,7 @@ export const loadAbout = function(){
     locationDescription.append(locationPara1, address, locationPara2);
     content.appendChild(location);
 
+    //The contact information of the drink shop
     //<div id="contact"></div>
     const contact = document.createElement("div");
     contact.setAttribute("id", "contact");
@@ -108,6 +105,7 @@ export const loadAbout = function(){
     contactDescription.append(contactPara1, contactPara2, contactUl);
     content.appendChild(contact);
 
+    //The messgae left for customers
     //<div id="message">
     const message = document.createElement("div");
     message.setAttribute("id", "message");
@@ -133,10 +131,4 @@ export const loadAbout = function(){
     messagePara.appendChild(messageParaNode);
     messageDescription.appendChild(messagePara);
     content.appendChild(message);
-}
-
-const clearParent = function(parent){
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
 }

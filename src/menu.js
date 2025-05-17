@@ -8,17 +8,13 @@ import beverage7 from "./images/beverage7.jpg"
 import beverage8 from "./images/beverage8.jpg"
 
 
-export const loadMenu = function(){
-    
-    //Remove all children in div #element:
-    const content = document.querySelector("#content");
-    clearParent(content);
-
+export const loadMenu = function(content){
     //<h1 id="menu">Menu</h1>
     const menuName = document.createElement("h1");
     menuName.textContent = "Menu";
     content.appendChild(menuName);
 
+    //The introduction of the menu
     //<div id="beverages>
     const beverages = document.createElement("div");
     beverages.setAttribute("id", "beverages");
@@ -32,6 +28,7 @@ export const loadMenu = function(){
     beverages.append(beveragesH2, beveragesPara);
     content.appendChild(beverages);
 
+    //Information of all goods on the menu
     //<div id="beverageList">
     const beverageList = document.createElement("div");
     beverageList.setAttribute("id", "beverageList");
@@ -85,13 +82,6 @@ export const loadMenu = function(){
     ));
     
     content.appendChild(beverageList);
-}
-
-
-const clearParent = function(parent){
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
 }
 
 /*  Example:
