@@ -34,3 +34,9 @@ background : <img src="images/tea-shop.jpg" alt="Tea Shop" width="400">
 #fruit {
 	background-image: url("./images/fruit.png");
 }
+
+#beverageList {
+	width: 60%;
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+}
