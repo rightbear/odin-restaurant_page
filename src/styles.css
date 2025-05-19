@@ -80,7 +80,7 @@ body {
 }
 
 .contentBoxes {
-  width: 75%;
+  width: 90%;
   gap: 10px;
 
   display: flex;
@@ -133,7 +133,7 @@ body {
 
 .contentBox > .description > ul{
   width: 50%;
-  padding: 5px 30px;
+  padding: 5px 0px 5px 30px;
   margin: 10px auto;
   border-radius: 10px;
 
