@@ -31,6 +31,10 @@ export const loadMenu = function(content){
     //<div class="title">
     const beveragesTitle = document.createElement("div");
     beveragesTitle.classList.add("title");
+    //<div class="description">
+    const beveragesDescription = document.createElement("div");
+    beveragesDescription.classList.add("description");
+    beverages.append(beveragesTitle, beveragesDescription);
     //<img src="images/cocktail.png" alt="Cocktail Icon" height="40">
     const beveragesTitleImg = document.createElement("img");
     beveragesTitleImg.src = cocktailImage;
@@ -44,7 +48,7 @@ export const loadMenu = function(content){
     const beveragesPara = document.createElement("p");
     const beveragesParaNode = document.createTextNode("Crafted with premium ingredients. Inspired by Taiwan’s rich tea culture.");
     beveragesPara.appendChild(beveragesParaNode);
-    beverages.append(beveragesTitle, beveragesPara);
+    beveragesDescription.appendChild(beveragesPara);
     menuContentBoxes.appendChild(beverages);
 
     //Information of all goods on the menu
@@ -126,11 +130,11 @@ function addBeverage(number, name, image,  price, ingredients, description){
 
     const beveragePrice = document.createElement("div");
     beveragePrice.classList.add("price");
-    beveragePrice.innerHTML = price;
+    beveragePrice.textContent = price;
     const beverageIngred = document.createElement("div");
     beverageIngred.classList.add("mainIngred");
-    beverageIngred.innerHTML = "<strong>Ingredients<strong>: ";
-    beverageIngred.innerHTML += ingredients;
+    beverageIngred.textContent = "Ingredients: ";
+    beverageIngred.textContent += ingredients;
     const beveragePara = document.createElement("p");
     const beverageParaNode = document.createTextNode(description);
     beveragePara.appendChild(beverageParaNode);

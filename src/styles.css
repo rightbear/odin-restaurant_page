@@ -2,10 +2,16 @@
 background : <img src="images/tea-shop.jpg" alt="Tea Shop" width="400">
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
 *  {
     margin: 0;  
     padding: 0;
     box-sizing: border-box;
+
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -79,6 +85,8 @@ body {
 
   display: flex;
   flex-direction: column;
+
+  align-items: center;
 }
 
 .contentBox {
@@ -112,7 +120,6 @@ body {
 .contentBox > .description {
   color: lightcyan;
   font-size: 20px;
-  width: 95%;
 
   display: flex;
   flex-direction: column;
@@ -121,7 +128,7 @@ body {
 }
 
 /* make text paragraphs in descriptions align to left, not center */
-.contentBox > .description >p{
+.contentBox > .description > p{
   align-self: flex-start;
 }
 
@@ -200,9 +207,47 @@ li[id="fruit"] {
 }
 
 #beverageList {
-	width: 60%;
+	width: 90%;
 	display: grid;
-	grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+	grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+
+  gap: 20px 40px;
+
+  justify-content: center;
+  /* make all grid elements align on the top of divs*/
+  align-items: flex-start;
+}
+
+#beverageList > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#beverageList > div > img{
+  /* make images centered in divs of the grid */
+  align-self: center;
+}
+
+
+#beverageList > div > .price {
+  width: fit-content;
+  /* make price positioned right in divs of the grid */
+  align-self: flex-end;
+
+  padding: 5px;
+  margin: 0px 30px 0px 0px;
+
+  background-color: #80ef80; 
+}
+
+#beverageList > div > p {
+  color: lightcyan;
+
+  padding: 10px;
+  border: 1px solid lightcyan;
+  border-radius: 10px;
+  background-color: #06402b;  
 }
 
 /*********************************/

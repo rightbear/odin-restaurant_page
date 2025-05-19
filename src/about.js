@@ -93,13 +93,13 @@ export const loadAbout = function(content){
     const contactUl = document.createElement("ul");
     //<li>Phone: +886-2-8780-2563
     const contactLi1 = document.createElement("li");
-    contactLi1.innerHTML = "<strong>Phone:</strong> +886-2-8780-2563";
+    contactLi1.textContent = "Phone: +886-2-8780-2563";
     //<li>Email: hello@drinksforyou.com
     const contactLi2= document.createElement("li");
-    contactLi2.innerHTML = "<strong>Email:</strong> hello@drinksforyou.com";
+    contactLi2.textContent = "Email: hello@drinksforyou.com";
     //<li>Hours: Daily, 11:00 AM – 10:00 PM
     const contactLi3 = document.createElement("li");
-    contactLi3.innerHTML = "<strong>Hours:</strong> Daily, 11:00 AM – 10:00 PM";
+    contactLi3.textContent = "Hours: Daily, 11:00 AM – 10:00 PM";
     contactUl.append(contactLi1, contactLi2, contactLi3);
     contactDescription.append(contactPara1, contactUl);
     aboutContentBoxes.appendChild(contact);
@@ -119,7 +119,7 @@ export const loadAbout = function(content){
     //<img src="images/heart.png" alt="Heart Icon" height="40">
     const messageitleImg = document.createElement("img");
     messageitleImg.src = heartImage;
-    messageitleImg.alt = "Pin Icon";
+    messageitleImg.alt = "Heart Icon";
     messageitleImg.height = 40;
     //<h2>We’re Here for You</h2>
     const messageH2 = document.createElement("h2");
