@@ -1,17 +1,26 @@
 import pinImage from "./images/pin.png";
-import cocktailImage from "./images/cocktail.png";
+import letterImage from "./images/letter.png";
 import heartImage from "./images/heart.png";
 
 export const loadAbout = function(content){
+    //<div class="headBox>
+    const headContainer = document.createElement("div");
+    headContainer.classList.add("headBox");
     //<h1>About Us</h1>
     const aboutName = document.createElement("h1");
     aboutName.textContent = "About Us";
-    content.appendChild(aboutName);
+    headContainer.appendChild(aboutName);
+    content.appendChild(headContainer);
+
+    //<div class="contentBoxes">
+    const aboutContentBoxes = document.createElement("div");
+    aboutContentBoxes.classList.add("contentBoxes");
 
     //The location of the drink shop
-    //<div id="location">
+    //<div id="location" class="contentBox">
     const location = document.createElement("div");
     location.setAttribute("id", "location");
+    location.classList.add("contentBox");
     //<div class="title">
     const locationTitle = document.createElement("div");
     locationTitle.classList.add("title");
@@ -30,14 +39,11 @@ export const loadAbout = function(content){
     locationTitle.append(locationitleImg, locationH2);
     //<p>We’re located...
     const locationPara1 = document.createElement("p");
-    const locationPara1Node = document.createTextNode("We’re located right in the heart of Taipei, inside the iconic:");
+    const locationPara1Node = document.createTextNode("We’re located right in the heart of Taipei, inside the iconic Taipei 101 Mall – B1 Floor. Come sip your favorite drink with a skyline view!");
     locationPara1.appendChild(locationPara1Node);
     //<div id="address">
     const address = document.createElement("div");
     address.setAttribute("id", "address");
-    //<h3>Taipei 101 Mall – B1 Floor</h3>
-    const addressH3 = document.createElement("h3");
-    addressH3.textContent = "Taipei 101 Mall – B1 Floor";
     //<p>No. 45, Shifu...
     const addressPara1 = document.createElement("p");
     const addressPara1Node = document.createTextNode("No. 45, Shifu Rd., Xinyi District, Taipei City 110, Taiwan");
@@ -54,18 +60,15 @@ export const loadAbout = function(content){
     const addressPara2 = document.createElement("p");
     const addressPara2Node = document.createTextNode("(Just steps away from Taipei 101/World Trade Center MRT Station – Exit 4)");
     addressPara2.appendChild(addressPara2Node);
-    address.append(addressH3, addressPara1, addressMap, addressPara2);
-    //<p>Come sip your favorite...
-    const locationPara2 = document.createElement("p");
-    const locationPara2Node = document.createTextNode("Come sip your favorite drink with a skyline view!");
-    locationPara2.appendChild(locationPara2Node);
-    locationDescription.append(locationPara1, address, locationPara2);
-    content.appendChild(location);
+    address.append(addressPara1, addressMap, addressPara2);
+    locationDescription.append(locationPara1, address);
+    aboutContentBoxes.appendChild(location);
 
     //The contact information of the drink shop
-    //<div id="contact"></div>
+    //<div id="contact" class="contentBox">
     const contact = document.createElement("div");
     contact.setAttribute("id", "contact");
+    contact.classList.add("contentBox");
     //<div class="title">
     const contactTitle = document.createElement("div");
     contactTitle.classList.add("title");
@@ -73,10 +76,10 @@ export const loadAbout = function(content){
     const contactDescription = document.createElement("div");
     contactDescription.classList.add("description");
     contact.append(contactTitle, contactDescription);
-    //<img src="images/cocktail.png" alt="Cocktail Icon" height="40">
+    //<img src="images/letter.png" alt="Letter Icon" height="40">
     const constTitleImg = document.createElement("img");
-    constTitleImg.src = cocktailImage;
-    constTitleImg.alt = "Cocktail Icon";
+    constTitleImg.src = letterImage;
+    constTitleImg.alt = "Letter Icon";
     constTitleImg.height = 40;
     //<h2>Our Location</h2>
     const contactH2 = document.createElement("h2");
@@ -84,12 +87,8 @@ export const loadAbout = function(content){
     contactTitle.append(constTitleImg, contactH2);
     //<p>Got questions...
     const contactPara1 = document.createElement("p");
-    const contactPara1Node = document.createTextNode("Got questions, feedback, or just want to say hi?");
+    const contactPara1Node = document.createTextNode("Got questions, feedback, or just want to say hi? We’d love to hear from you!");
     contactPara1.appendChild(contactPara1Node);
-    //<p>We’d love to...
-    const contactPara2 = document.createElement("p");
-    const contactPara2Node = document.createTextNode("We’d love to hear from you!");
-    contactPara2.appendChild(contactPara2Node);
     //<ul>
     const contactUl = document.createElement("ul");
     //<li>Phone: +886-2-8780-2563
@@ -102,13 +101,14 @@ export const loadAbout = function(content){
     const contactLi3 = document.createElement("li");
     contactLi3.innerHTML = "<strong>Hours:</strong> Daily, 11:00 AM – 10:00 PM";
     contactUl.append(contactLi1, contactLi2, contactLi3);
-    contactDescription.append(contactPara1, contactPara2, contactUl);
-    content.appendChild(contact);
+    contactDescription.append(contactPara1, contactUl);
+    aboutContentBoxes.appendChild(contact);
 
     //The messgae left for customers
-    //<div id="message">
+    //<div id="message" class="contentBox">
     const message = document.createElement("div");
     message.setAttribute("id", "message");
+    message.classList.add("contentBox");
     //<div class="title">
     const messageTitle = document.createElement("div");
     messageTitle.classList.add("title");
@@ -130,5 +130,7 @@ export const loadAbout = function(content){
     const messageParaNode = document.createTextNode("At Drinks for You, we don’t just make drinks — we create moments. Whether you're a local tea lover or a curious traveler, our team is always ready with a warm welcome and your perfect drink.");
     messagePara.appendChild(messageParaNode);
     messageDescription.appendChild(messagePara);
-    content.appendChild(message);
+    aboutContentBoxes.appendChild(message);
+
+    content.appendChild(aboutContentBoxes);
 }

@@ -3,16 +3,25 @@ import teaImage from "./images/tea-list.jpg"
 
 export const loadHome = function(content){
     // The name of the drink shop
+    //<div class="headBox>
+    const headContainer = document.createElement("div");
+    headContainer.classList.add("headBox");
     //<h1 id="shopName">
     const shopName = document.createElement("h1");
     shopName.textContent = "Drinks for You";
     shopName.setAttribute("id", "shopName");
-    content.appendChild(shopName);
+    headContainer.appendChild(shopName);
+    content.appendChild(headContainer);
+
+    //<div class="contentBoxes">
+    const homeContentBoxes = document.createElement("div");
+    homeContentBoxes.classList.add("contentBoxes");
 
     // The business philosophy of the drink shop
-    //<div id="idea">
+    //<div id="idea" class="contentBox">
     const idea = document.createElement("div");
     idea.setAttribute("id", "idea");
+    idea.classList.add("contentBox");
     //<div class="title">
     const ideaTitle = document.createElement("div");
     ideaTitle.classList.add("title");
@@ -38,12 +47,13 @@ export const loadHome = function(content){
     const ideaDesPara2Node = document.createTextNode("Our passion for quality and commitment to service excellence drive us to create the amazing flavor.");
     ideaDesPara2.appendChild(ideaDesPara2Node);
     ideaDescription.append(ideaDesPara1, ideaDesPara2);
-    content.appendChild(idea);
+    homeContentBoxes.appendChild(idea);
 
     // The ingredient information of the drink shop
-    //<div id="ingredient">
+    //<div id="ingredient" class="contentBox">
     const ingredient = document.createElement("div");
     ingredient.setAttribute("id", "ingredient");
+    ingredient.classList.add("contentBox");
     //<div class="title">
     const ingredTitle = document.createElement("div");
     ingredTitle.classList.add("title");
@@ -62,7 +72,7 @@ export const loadHome = function(content){
     ingredTitle.append(ingredTitleStar, ingredTitleIngred);
     //<p>Founded in 2025...
     const ingredDesPara1 = document.createElement("p");
-    const ingredDesPara1Node = document.createTextNode("At Drinks for You, every drink begins with the finest, 100% natural ingredients");
+    const ingredDesPara1Node = document.createTextNode("At Drinks for You, every drink begins with the finest, 100% natural ingredients. Support for locally agricultural products.");
     ingredDesPara1.appendChild(ingredDesPara1Node);
     //<ul>
     const ingredDesUl = document.createElement("ul");
@@ -84,12 +94,13 @@ export const loadHome = function(content){
     ingredDesLi4.textContent = "Seasonal fruits from local farms";
     ingredDesUl.append(ingredDesLi1, ingredDesLi2, ingredDesLi3, ingredDesLi4);
     ingredDescription.append(ingredDesPara1, ingredDesUl);
-    content.appendChild(ingredient);
+    homeContentBoxes.appendChild(ingredient);
 
     // The Core Service of the drink shop
-    //<div id="service">
+    //<div id="service" class="contentBox">
     const service = document.createElement("div");
     service.setAttribute("id", "service");
+    service.classList.add("contentBox");
     //<div class="title">
     const serviceTitle = document.createElement("div");
     serviceTitle.classList.add("title");
@@ -115,7 +126,7 @@ export const loadHome = function(content){
     const serviceDesPara2Node = document.createTextNode("Visit us and sip the brilliance of Taiwan – Crafted with heart. Served with joy. Rooted in tradition and globally loved.");
     serviceDesPara2.appendChild(serviceDesPara2Node);
     serviceDescription.append(serviceDesPara1, serviceDesPara2);
-    content.appendChild(service);
+    homeContentBoxes.appendChild(service);
 
     //<div id="bottomImage">
     const bottomImage = document.createElement("div");
@@ -126,5 +137,6 @@ export const loadHome = function(content){
     teaListImg.alt = "Tea List";
     teaListImg.width = 400;
     bottomImage.appendChild(teaListImg);
-    content.appendChild(bottomImage);
+    homeContentBoxes.appendChild(bottomImage);
+    content.appendChild(homeContentBoxes);
 }

@@ -1,3 +1,4 @@
+import cocktailImage from "./images/cocktail.png";
 import beverage1 from "./images/beverage1.jpg"
 import beverage2 from "./images/beverage2.jpg"
 import beverage3 from "./images/beverage3.jpg"
@@ -9,24 +10,42 @@ import beverage8 from "./images/beverage8.jpg"
 
 
 export const loadMenu = function(content){
+    //<div class="headBox">
+    const headContainer = document.createElement("div");
+    headContainer.classList.add("headBox");
     //<h1 id="menu">Menu</h1>
     const menuName = document.createElement("h1");
     menuName.textContent = "Menu";
-    content.appendChild(menuName);
+    headContainer.appendChild(menuName);
+    content.appendChild(headContainer);
+
+    //<div class="contentBoxes">
+    const menuContentBoxes = document.createElement("div");
+    menuContentBoxes.classList.add("contentBoxes");
 
     //The introduction of the menu
-    //<div id="beverages>
+    //<div id="beverages class="contentBox">
     const beverages = document.createElement("div");
     beverages.setAttribute("id", "beverages");
+    beverages.classList.add("contentBox");
+    //<div class="title">
+    const beveragesTitle = document.createElement("div");
+    beveragesTitle.classList.add("title");
+    //<img src="images/cocktail.png" alt="Cocktail Icon" height="40">
+    const beveragesTitleImg = document.createElement("img");
+    beveragesTitleImg.src = cocktailImage;
+    beveragesTitleImg.alt = "Cocktail Icon";
+    beveragesTitleImg.height = 40;
     //<h2>Beverages</h2>
     const beveragesH2 = document.createElement("h2");
     beveragesH2.textContent = "Our Beverages";
+    beveragesTitle.append(beveragesTitleImg, beveragesH2);
     //<p>Crafted with...
     const beveragesPara = document.createElement("p");
     const beveragesParaNode = document.createTextNode("Crafted with premium ingredients. Inspired by Taiwan’s rich tea culture.");
     beveragesPara.appendChild(beveragesParaNode);
-    beverages.append(beveragesH2, beveragesPara);
-    content.appendChild(beverages);
+    beverages.append(beveragesTitle, beveragesPara);
+    menuContentBoxes.appendChild(beverages);
 
     //Information of all goods on the menu
     //<div id="beverageList">
@@ -81,7 +100,8 @@ export const loadMenu = function(content){
                 "No tea, just creamy milk layered with rich brown sugar and smooth herbal jelly. Perfect for non-caffeine lovers."
     ));
     
-    content.appendChild(beverageList);
+    menuContentBoxes.appendChild(beverageList);
+    content.appendChild(menuContentBoxes);
 }
 
 /*  Example:
