@@ -121,11 +121,7 @@ export const loadHome = function(content){
     const serviceDesPara1 = document.createElement("p");
     const serviceDesPara1Node = document.createTextNode("Whether you're craving a classic milk tea, a refreshing fruit blend, or a custom flavor just for you – we're here to make every drink special. Our team is ready with warm smiles and the perfect blend just for you.");
     serviceDesPara1.appendChild(serviceDesPara1Node);
-    //<p>Visit us...
-    const serviceDesPara2 = document.createElement("p");
-    const serviceDesPara2Node = document.createTextNode("Visit us and sip the brilliance of Taiwan – Crafted with heart. Served with joy. Rooted in tradition and globally loved.");
-    serviceDesPara2.appendChild(serviceDesPara2Node);
-    serviceDescription.append(serviceDesPara1, serviceDesPara2);
+    serviceDescription.appendChild(serviceDesPara1);
     homeContentBoxes.appendChild(service);
 
     //<div id="bottomImage">

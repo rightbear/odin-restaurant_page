@@ -87,7 +87,7 @@ export const loadAbout = function(content){
     contactTitle.append(constTitleImg, contactH2);
     //<p>Got questions...
     const contactPara1 = document.createElement("p");
-    const contactPara1Node = document.createTextNode("Got questions, feedback, or just want to say hi? We’d love to hear from you!");
+    const contactPara1Node = document.createTextNode("Got questions, feedback, or just want to say hi? We’d love to hear from you! Besides, our official social accounts is coming soon!");
     contactPara1.appendChild(contactPara1Node);
     //<ul>
     const contactUl = document.createElement("ul");

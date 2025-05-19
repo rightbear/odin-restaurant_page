@@ -56,7 +56,8 @@ body {
 
 #content {
   background-color: #9a6852;
-  margin: 50px;
+  width: 65%;
+  margin: 50px auto;
   padding: 20px;
   border-radius: 10px;
 
@@ -73,7 +74,7 @@ body {
 }
 
 .contentBoxes {
-  width: 50%;
+  width: 75%;
   gap: 10px;
 
   display: flex;
@@ -119,13 +120,13 @@ body {
   align-items: center;
 }
 
+/* make text paragraphs in descriptions align to left, not center */
 .contentBox > .description >p{
   align-self: flex-start;
 }
 
 .contentBox > .description > ul{
   width: 50%;
-  background-color: #5c0000;
   padding: 5px 30px;
   margin: 10px auto;
   border-radius: 10px;
@@ -135,13 +136,27 @@ body {
   justify-content: center;
 }
 
-.contentBox > .description > ul > li {
+.contentBox[id="ingredient"] > .description > ul{
+  background-color: #5c0000;
+}
+
+.contentBox[id="contact"] > .description > ul{
+  background-color: #175e71;
+}
+
+.contentBox[id="ingredient"] > .description > ul > li {
   margin: 0;
 	padding: 20px 0 20px 50px;
 	list-style: none;
   background-repeat: no-repeat;
 	background-position: left center;
 	background-size: 30px;
+}
+
+.contentBox[id="contact"] > .description > ul > li {
+  margin: 0;
+  list-style: none;
+	padding: 20px 10px 20px 10px;
 }
 
 #content > .headBox > h1 {
@@ -184,10 +199,21 @@ li[id="fruit"] {
 	background-image: url("./images/fruit.png");
 }
 
-/*********************************/
-
 #beverageList {
 	width: 60%;
 	display: grid;
 	grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+}
+
+/*********************************/
+
+#address {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  margin: 30px;
+  gap: 10px;
 }
