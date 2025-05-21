@@ -1,0 +1,264 @@
+@import url(https://fonts.googleapis.com/css2?family=Delius&display=swap);
+/*
+background : <img src="images/tea-shop.jpg" alt="Tea Shop" width="400">
+*/
+
+*  {
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/*********************************/
+
+/* Add a black background color to the top navigation */
+nav {
+  background-color: #9d7553;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Style the links inside the navigation bar */
+nav button {
+  border: none;
+  margin: 4px 0px;
+  color: #f2f2f2;
+  background-color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Change the color of links on hover */
+nav  button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/*********************************/
+
+body {
+  background-image: url(d279f35c55bb0468d3ed.jpg);
+  background-size: 475px;
+  background-color: #cccccc;
+}
+
+/*********************************/
+
+#content {
+  background-color: #9a6852;
+  width: 65%;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headBox {
+  display: flex;
+  width: minmax(400px, 50%);
+
+  font-size: 30px;
+}
+
+.contentBoxes {
+  width: 90%;
+  gap: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.contentBox >.title {
+  font-size: 25px;
+
+  /*make h2 as wide as the text*/
+  width: fit-content;
+  
+  padding: 5px 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+  gap: 10px;
+
+  color: lightcyan;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contentBox > .description {
+  color: lightcyan;
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* make text paragraphs in descriptions align to left, not center */
+.contentBox > .description > p{
+  align-self: flex-start;
+}
+
+.contentBox > .description > ul{
+  width: 50%;
+  padding: 5px 0px 5px 30px;
+  margin: 10px auto;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contentBox[id="ingredient"] > .description > ul{
+  background-color: #5c0000;
+}
+
+.contentBox[id="contact"] > .description > ul{
+  background-color: #175e71;
+}
+
+.contentBox[id="ingredient"] > .description > ul > li {
+  margin: 0;
+	padding: 20px 0 20px 50px;
+	list-style: none;
+  background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 30px;
+}
+
+.contentBox[id="contact"] > .description > ul > li {
+  margin: 0;
+  list-style: none;
+	padding: 20px 10px 20px 10px;
+}
+
+#content > .headBox > h1 {
+  /*make h1 as wide as the text*/
+  width: fit-content;
+
+  color: lightcyan;
+
+  padding: 5px 10px;
+  border: 1px solid lightcyan;
+  margin: 10px auto;
+  border-radius: 10px;
+} 
+
+/*********************************/
+
+#bottomImage {
+  margin: 10px;
+}
+
+#bottomImage > img {
+  width: 100%;
+}
+
+/*********************************/
+
+li[id="tea"] {
+	background-image: url(307cd8f2f0f13db7448a.png);
+}
+
+li[id="tapioca"] {
+	background-image: url(8e06051131366e8e82da.png);
+}
+
+li[id="sugar"] {
+	background-image: url(ea10a65fb6d2214c3351.png);
+}
+
+li[id="fruit"] {
+	background-image: url(06ba399ff410382cac53.png);
+}
+
+#beverageList {
+	width: 90%;
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+
+  gap: 20px 40px;
+
+  justify-content: center;
+  /* make all grid elements align on the top of divs*/
+  align-items: flex-start;
+}
+
+#beverageList > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#beverageList > div > img{
+  /* make images centered in divs of the grid */
+  align-self: center;
+}
+
+
+#beverageList > div > .price {
+  width: fit-content;
+  /* make price positioned right in divs of the grid */
+  align-self: flex-end;
+
+  padding: 5px;
+  margin: 0px 30px 0px 0px;
+
+  background-color: #80ef80; 
+}
+
+#beverageList > div > p {
+  color: lightcyan;
+
+  padding: 10px;
+  border: 1px solid lightcyan;
+  border-radius: 10px;
+  background-color: #06402b;  
+}
+
+/*********************************/
+
+#address {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  margin: 30px;
+  gap: 10px;
+}
+
+/*# sourceMappingURL=main.b6061247fb8b8edd690a.css.map*/
